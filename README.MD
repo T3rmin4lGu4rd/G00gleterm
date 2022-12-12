@@ -2,13 +2,13 @@
 ## Project Version 
 V0.1
 ## Project Purpose 
-To make google search via python in your terminal 
+To make google search via python in your terminal.
 ## Script Language 
 Python 
 ## Script Language Version 
 3.8
 ## Project Status 
-it will update
+it will update.
 ## Installation 
 ```bash 
 git clone https://github.com/T3rmin4lGu4rd/G00gleterm.git
