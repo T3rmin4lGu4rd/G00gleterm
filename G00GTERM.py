@@ -1,9 +1,10 @@
+#libraries 
 import requests
 from bs4 import BeautifulSoup
 import sys
 import getopt
 import re
-class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/xml_reference/request_format.html
+class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/xml_reference/request_format.html google search parametres 
     def __init__(self,search_qry,file_extensions,site,result_num):
         self.file_extensions = file_extensions 
         self.search_qry = search_qry
@@ -17,7 +18,7 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
         self.query_fileype = "filetype%3A"
         self.query_date_sort = "&sort=date"
         self.query_site = "site%3A"
-        
+#Site Research 
     def Site_Research(self):
         try:
             r = requests.get(self.url+self.query_site+self.site+self.query_num+self.result_num,headers=self.user_agent)
@@ -47,6 +48,7 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
                 links = re.split(":(?=http)",link["href"].replace("/url?q=",""))
                 print(f"{count}){links[0]}")
                 count+=1
+#Dorking specific files include word     
     def File(self):
         try:
             r = requests.get(self.url+self.search_qry+"+"+self.query_fileype+self.file_extensions+self.query_num+str(self.result_num),headers=self.user_agent)
@@ -78,6 +80,8 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
                 
                 print(f"{count}){linkx[0]}")
                 count+=1
+# Dorking files of site
+    
     def Site_File(self):
         try:
             r = requests.get(self.url+self.query_site+self.site+"&"+self.query_fileype+self.file_extensions+self.query_num+str(self.result_num),headers=self.user_agent)
@@ -109,6 +113,8 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
                 
                 print(f"{count}){linkx[0]}")
                 count+=1
+
+# Argv 
 search_qry = ""
 file_extension = ""
 site = ""
@@ -116,13 +122,15 @@ result_num =""
 helpx =""
 help_text = ("""
 Google T3rminal Engine V.0.1 
---help            *Show options 
 -q,--query        *Adds the specified query terms to the query terms in parameter q.
 -s,--site         *Limits search results to documents in the specified domain, host or web directory, or excludes results from the specified location   
 -f,--file         *Specifies a file format to include or exclude in the search results.
 -n,--num          *Maximum number of results to include in the search results. The maximum value of this parameter is 1000.
 Example : python3 G00GTERM.py -q hello -n 10
 Example : python3 G00GTERM.py -s airways -f pdf -n 10 """)
+
+
+# Argv elements
 argv = sys.argv[1:]
 try:
     options,args = getopt.getopt(argv,"q:f:s:n:",["search_qry =","file_extension =","site =","result_num ="])
@@ -142,9 +150,12 @@ if len(sys.argv) == 1:
     print(help_text)
     sys.exit()
 
-tuple = (options[0])
-tuple2 = options[1]
 
+
+# will change this code block
+
+tuple = (options[0])
+tuple2 = options[1] 
 if tuple[0] == "-s"and"--site" and tuple2[0] == "-n"and"--num":
     Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
     Execute.Site_Research()
