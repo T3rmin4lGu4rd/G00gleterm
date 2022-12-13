@@ -12,14 +12,7 @@ it will update.
 ## Installation 
 ```bash 
 git clone https://github.com/T3rmin4lGu4rd/G00gleterm.git
+pip install -r requirements.txt
+python3 G00GTERM.py -q <specific word> -f <filetype> -n <num of result>
 ```
 
-## Please check your libs to run the script, Bottom I wrote my libs of I used it.
-```bash
-# I will add a requirements.txt as soon as possibilities.
-pip install bs4
-pip install sys
-pip install getopt
-pip install re
-pip install requests
-```
