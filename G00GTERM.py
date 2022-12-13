@@ -148,6 +148,9 @@ tuple2 = options[1]
 if tuple[0] == "-s"and"--site" and tuple2[0] == "-n"and"--num":
     Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
     Execute.Site_Research()
+elif tuple2[0] == "-s"and"--site" and tuple[0] == "-n"and"--num":
+    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+    Execute.Site_Research()
     sys.exit()
 elif tuple[0] == "-q"and"--query":
     Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
@@ -156,4 +159,12 @@ elif tuple[0] == "-q"and"--query":
 elif tuple[0] == "-s"and"--site" and tuple2[0] == "-f"and"--filetype" :
     Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
     Execute.Site_File()
-#updated
+elif tuple2[0] == "-s"and"--site" and tuple[0] == "-f"and"--filetype" :
+    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+    Execute.Site_File()
+elif tuple[0] == "-f"and"--filetype" and tuple2[0] == "-s"and"--site" :
+    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+    Execute.Site_File()
+elif tuple2[0] == "-f"and"--filetype" and tuple[0] == "-s"and"--site" :
+    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+    Execute.Site_File()
