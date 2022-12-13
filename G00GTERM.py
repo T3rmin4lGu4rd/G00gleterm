@@ -138,45 +138,94 @@ try:
 except:
     print("Error Message")
 for name, value in options:
-    if name in ["-q", "--query"]:
+    if name in ["-q"]:
         search_qry = value
-    elif name in ["-f", "--filetype"]:
+    elif name in ["-f"]:
         file_extension = value
-    elif name in ["-s", "--site"]:
+    elif name in ["-s"]:
         site = value
-    elif name in ["-n","--num"]:
-        result_num = value 
+    elif name in ["-n"]:
+        result_num = value
+
 if len(sys.argv) == 1:
     print(IndexError,"Please check the argv")
     print(help_text)
     sys.exit()
+# argv elements 
+argv_1 = options[0]
+argv_2 = options[1]
+argv_3 = options[2]
 
-
-
-# will change this code block
-
-tuple = (options[0])
-tuple2 = options[1] 
-if tuple[0] == "-s"and"--site" and tuple2[0] == "-n"and"--num":
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_Research()
-elif tuple2[0] == "-s"and"--site" and tuple[0] == "-n"and"--num":
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_Research()
-    sys.exit()
-elif tuple[0] == "-q"and"--query":
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.File()
-    sys.exit()
-elif tuple[0] == "-s"and"--site" and tuple2[0] == "-f"and"--filetype" :
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_File()
-elif tuple2[0] == "-s"and"--site" and tuple[0] == "-f"and"--filetype" :
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_File()
-elif tuple[0] == "-f"and"--filetype" and tuple2[0] == "-s"and"--site" :
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_File()
-elif tuple2[0] == "-f"and"--filetype" and tuple[0] == "-s"and"--site" :
-    Execute = Google_Terminal_Engine(search_qry,file_extension,site,result_num)
-    Execute.Site_File()
+#conditions and execute the  class
+if argv_1[0] == "-q" and argv_2[0] == "-s" and argv_3[0] =="-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-q" and argv_2[0] == "-n" and argv_3[0] == "-s":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-s" and argv_2[0] == "-q" and argv_3[0] == "-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-s" and argv_2[0] == "-n" and argv_3[0] == "-q":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-q" and argv_3[0] == "-s":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-s" and argv_3[0] == "-q":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_Research()
+   sys.exit()
+elif argv_1[0] == "-q" and argv_2[0] == "-f" and argv_3[0] == "-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-q" and argv_2[0] == "-n" and argv_3[0] == "-f":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-f" and argv_2[0] == "-q" and argv_3[0] == "-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-f" and argv_2[0] == "-n" and argv_3[0] == "-q":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-q" and argv_3[0] == "-f":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-f" and argv_3[0] == "-q":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.File()
+   sys.exit()
+elif argv_1[0] == "-s" and argv_2[0] == "-f" and argv_3[0] == "-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
+elif argv_1[0] == "-s" and argv_2[0] == "-n" and argv_3[0] == "-f":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
+elif argv_1[0] == "-f" and argv_2[0] == "-s" and argv_3[0] == "-n":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
+elif argv_1[0] == "-f" and argv_2[0] == "-n" and argv_3[0] == "-s":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-f" and argv_3[0] == "-s":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
+elif argv_1[0] == "-n" and argv_2[0] == "-s" and argv_3[0] == "-f":
+   execute =  Google_Terminal_Engine(search_qry,file_extension,site,result_num)
+   execute.Site_File()
+   sys.exit()
