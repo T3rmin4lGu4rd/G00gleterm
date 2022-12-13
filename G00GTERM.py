@@ -127,7 +127,7 @@ Google T3rminal Engine V.0.1
 -s,--site         *Limits search results to documents in the specified domain, host or web directory, or excludes results from the specified location   
 -f,--file         *Specifies a file format to include or exclude in the search results.
 -n,--num          *Maximum number of results to include in the search results. The maximum value of this parameter is 1000.
-Example : python3 G00GTERM.py -q hello -n 10
+Example : python3 G00GTERM.py -q hello -f doc -n 10
 Example : python3 G00GTERM.py -s airways -f pdf -n 10 """)
 
 
