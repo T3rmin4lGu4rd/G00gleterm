@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import sys
 import getopt
 import re
+#Class
 class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static/gsa/docs/admin/current/gsa_doc_set/xml_reference/request_format.html google search parametres 
     def __init__(self,search_qry,file_extensions,site,result_num):
         self.file_extensions = file_extensions 
