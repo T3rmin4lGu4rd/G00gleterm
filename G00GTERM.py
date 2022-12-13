@@ -23,7 +23,6 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
     def Site_Research(self):
         try:
             r = requests.get(self.url+self.search_qry+"+"+self.query_site+self.site+self.query_num+self.result_num,headers=self.user_agent)
-            print(r.url)
             if r.status_code != 200 and 301:
                 print("404 Not found check the search_qry")
                 sys.exit(1)
@@ -53,7 +52,6 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
     def File(self):
         try:
             r = requests.get(self.url+self.search_qry+"+"+self.query_fileype+self.file_extensions+self.query_num+str(self.result_num),headers=self.user_agent)
-            print(r.url)
             if r.status_code != 200 and 301:
                 print("404 Not found check the search_qry")
                 sys.exit(1)
@@ -86,7 +84,6 @@ class Google_Terminal_Engine():#https://www.google.com/support/enterprise/static
     def Site_File(self):
         try:
             r = requests.get(self.url+self.query_site+self.site+"&"+self.query_fileype+self.file_extensions+self.query_num+str(self.result_num),headers=self.user_agent)
-            print(r.url)
             if r.status_code != 200 and 301:
                 print("404 Not found check the search_qry")
                 sys.exit(1)
